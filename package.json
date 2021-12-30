@@ -6,14 +6,8 @@
   "scripts": {
     "postinstall": "serenity-bdd update",
     "test": "failsafe test:clean test:run test:report",
-    "test:automated": "failsafe test:clean test:runAutomated test:report",
-    "test:smoke": "failsafe test:clean test:runSmoke test:report",
-    "test:dev": "failsafe test:clean test:runDev test:report",
     "test:clean": "rimraf target/site/serenity",
     "test:run": "protractor protractor.conf.js",
-    "test:runDev": "protractor protractor.conf.js --tags '@test'",
-    "test:runAutomated": "protractor protractor.conf.js --tags '@automated'",
-    "test:runSmoke": "protractor protractor.conf.js --tags '@smoke'",
     "test:report": "serenity-bdd run"
   },
   "keywords": [],
