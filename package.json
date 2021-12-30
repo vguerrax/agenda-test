@@ -1,0 +1,51 @@
+{
+  "name": "agenda-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "postinstall": "serenity-bdd update",
+    "test": "failsafe test:clean test:run test:report",
+    "test:automated": "failsafe test:clean test:runAutomated test:report",
+    "test:smoke": "failsafe test:clean test:runSmoke test:report",
+    "test:dev": "failsafe test:clean test:runDev test:report",
+    "test:clean": "rimraf target/site/serenity",
+    "test:run": "protractor protractor.conf.js",
+    "test:runDev": "protractor protractor.conf.js --tags '@test'",
+    "test:runAutomated": "protractor protractor.conf.js --tags '@automated'",
+    "test:runSmoke": "protractor protractor.conf.js --tags '@smoke'",
+    "test:report": "serenity-bdd run"
+  },
+  "keywords": [],
+  "author": "Victor Guerra",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^7.3.1",
+    "@serenity-js/assertions": "^3.0.0-rc.3",
+    "@serenity-js/console-reporter": "^3.0.0-rc.3",
+    "@serenity-js/core": "^3.0.0-rc.1",
+    "@serenity-js/cucumber": "^3.0.0-rc.3",
+    "@serenity-js/protractor": "^3.0.0-rc.3",
+    "@serenity-js/serenity-bdd": "^3.0.0-rc.3",
+    "@serenity-js/web": "^3.0.0-rc.3",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
+    "faker": "^5.5.3",
+    "mongodb": "^4.2.2",
+    "npm-failsafe": "^0.4.3",
+    "protractor": "^7.0.0",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/faker": "^5.5.9",
+    "@types/node": "^17.0.4",
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "eslint": "^8.5.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  }
+}
