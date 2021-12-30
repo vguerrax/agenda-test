@@ -2,6 +2,7 @@ const
   { ConsoleReporter } = require('@serenity-js/console-reporter');
 const { ArtifactArchiver } = require('@serenity-js/core');
 const { SerenityBDDReporter } = require('@serenity-js/serenity-bdd');
+const { Photographer, TakePhotosOfFailures } = require('@serenity-js/web');
 
 exports.config = {
   baseUrl: 'http://64.227.26.166',
@@ -16,6 +17,7 @@ exports.config = {
       ArtifactArchiver.storingArtifactsAt('./target/site/serenity'),
       new SerenityBDDReporter(),
       ConsoleReporter.forDarkTerminals(),
+      Photographer.whoWill(TakePhotosOfFailures),
       // new StreamReporter(),
     ],
     // actors: new Actors(),
@@ -48,10 +50,10 @@ exports.config = {
         '--allow-file-access-from-files',
         '--allow-file-access',
         '--disable-infobars',
-        // '--headless',
-        // '--disable-gpu',
+        '--headless',
+        '--disable-gpu',
         '--start-maximized',
-        // '--window-size=1700x900',
+        '--window-size=1280x720',
       ],
     },
   },
